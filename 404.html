@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#683BF2">
+<title>404 - Page Not Found | Stackly</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{--purple:#683BF2;--ink:#1A1A1A;--body:#74787C;--line:#ece8f5}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:Inter,Arial,sans-serif;color:var(--body);background:radial-gradient(circle at 12% 14%,#683bf21c,transparent 28%),radial-gradient(circle at 90% 82%,#683bf218,transparent 25%),#f8f7fc}
+.topbar{min-height:82px;padding:18px clamp(18px,5vw,72px);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:inline-flex;align-items:center;text-decoration:none}
+.brand img{display:block;width:154px;max-width:42vw;height:auto;object-fit:contain}
+.brand-fallback{display:none;color:var(--purple);font-size:26px;font-weight:900;letter-spacing:-1.2px}
+.top-note{font-size:12px;font-weight:600;color:#8c869b}
+main{flex:1;display:grid;place-items:center;padding:28px 18px 58px}
+.error-card{position:relative;overflow:hidden;width:min(100%,780px);padding:clamp(30px,6vw,64px) clamp(20px,6vw,70px);text-align:center;background:#ffffffed;border:1px solid #e2dbf4;border-radius:30px;box-shadow:0 24px 80px #26145214}
+.error-card:before{content:"";position:absolute;width:250px;height:250px;left:-140px;top:-150px;border-radius:50%;background:#683bf212;pointer-events:none}
+.illustration{position:relative;width:min(100%,390px);margin:0 auto 12px;aspect-ratio:1.7;display:grid;place-items:center}
+.number{position:relative;z-index:1;font-size:clamp(100px,22vw,190px);line-height:.9;letter-spacing:-.09em;font-weight:900;color:var(--purple);text-shadow:0 12px 0 #683bf212;user-select:none}
+.planet{position:absolute;z-index:2;width:clamp(60px,13vw,94px);aspect-ratio:1;border-radius:50%;right:9%;top:8%;background:linear-gradient(145deg,#a58cff,#683BF2 72%);box-shadow:inset -9px -10px 0 #2a11771f,0 14px 28px #683bf240}
+.planet:before,.planet:after{content:"";position:absolute;height:9px;width:122%;left:-11%;top:43%;border:5px solid #cfc2ff;border-left-color:#a58cff;border-right-color:#8e71f8;border-radius:50%;transform:rotate(-23deg)}
+.planet:after{transform:rotate(-23deg) scale(.72);opacity:.65}
+.spark{position:absolute;color:#a18af5;font-size:28px;font-weight:800}.one{left:7%;top:19%}.two{right:8%;bottom:10%;font-size:22px}.three{left:17%;bottom:12%;font-size:18px}
+.eyebrow{margin:18px 0 10px;color:var(--purple);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h1{margin:0;color:var(--ink);font-size:clamp(27px,4vw,40px);line-height:1.18;letter-spacing:-1.5px}
+.description{max-width:490px;margin:15px auto 0;font-size:14px;line-height:1.85;color:#777283}
+.actions{margin-top:29px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px}
+.btn{min-height:47px;padding:0 19px;border:1px solid var(--line);border-radius:12px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font:inherit;font-size:12px;font-weight:750;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}.btn:focus-visible{outline:3px solid #683bf247;outline-offset:3px}
+.btn-primary{color:#fff;background:var(--purple);border-color:var(--purple);box-shadow:0 9px 22px #683bf233}.btn-primary:hover{background:#5528df;box-shadow:0 13px 26px #683bf240}
+.btn-secondary{color:#4f4567;background:#fff}.btn-secondary:hover{background:#f8f5ff;border-color:#d6caff}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+footer{padding:0 20px 24px;text-align:center;font-size:11px;color:#9b96a7}
+@media(max-width:520px){.topbar{min-height:70px;padding:15px 18px}.brand img{width:130px}.top-note{font-size:10px}main{padding:18px 13px 38px}.error-card{border-radius:23px}.description{font-size:13px}.actions{flex-direction:column}.btn{width:100%;max-width:290px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Go to Stackly home">
+    <img src="assets/img/logo/logo.webp" alt="Stackly Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+    <span class="brand-fallback">Stackly</span>
+  </a>
+  <span class="top-note">We're here to help you get back on track.</span>
+</header>
+<main>
+  <section class="error-card" aria-labelledby="error-title">
+    <div class="illustration" aria-hidden="true">
+      <span class="spark one">✦</span><span class="spark two">✧</span><span class="spark three">✦</span>
+      <div class="number">404</div><div class="planet"></div>
+    </div>
+    <p class="eyebrow">Error code · 404</p>
+    <h1 id="error-title">Oops! Page not found</h1>
+    <p class="description">The page you're looking for may have moved, been removed, or is temporarily unavailable. Let's get you back to somewhere familiar.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        Back to Home
+      </a>
+      <button class="btn btn-secondary" type="button" id="backButton">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m0 0 6-6m-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Go Back
+      </button>
+    </div>
+  </section>
+</main>
+<footer>© <span id="year"></span> Stackly. All rights reserved.</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("backButton").addEventListener("click", function () {
+  if (window.history.length > 1) window.history.back();
+  else window.location.href = "index.html";
+});
+</script>
+</body>
+</html>

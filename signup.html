@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up | Stackly</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--tz-body-color:#74787C;--tz-title-color:#1A1A1A;--tz-heading:"Inter",sans-serif;--tz-body-font:"Inter",sans-serif;--tz-prime-c:#683BF2;--cube-1:cubic-bezier(.55,.085,0,.99);--cube-2:all .25s cubic-bezier(.645,.045,.355,1);--cube-3:cubic-bezier(.25,1,.5,1);--border:#e8e5ef;--soft:#f4f0ff}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:var(--tz-body-font);color:var(--tz-body-color);background:#fbfaff}a{color:var(--tz-prime-c);text-decoration:none}a:hover{text-decoration:underline}button,input,select{font:inherit}
+.shell{min-height:100vh;display:grid;grid-template-columns:minmax(320px,.92fr) 1.08fr}.panel{padding:28px clamp(22px,5vw,76px);display:flex;flex-direction:column;justify-content:space-between;background:#fff}
+.brand{display:flex;align-items:center;gap:12px;color:var(--tz-title-color);font-size:22px;font-weight:800;letter-spacing:-.7px}.logo{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:var(--tz-prime-c);color:white;font-size:22px;box-shadow:0 8px 22px #683bf244}
+.content{width:100%;max-width:430px;margin:28px auto}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--tz-prime-c);margin-bottom:10px}
+h1,h2{font-family:var(--tz-heading);color:var(--tz-title-color);margin:0}.content h1{font-size:clamp(29px,3vw,37px);letter-spacing:-1.5px;line-height:1.15;margin-bottom:10px}.intro{font-size:13px;line-height:1.7;margin:0 0 20px}
+.field{margin-bottom:13px}.field label{display:block;margin-bottom:7px;color:#292631;font-size:12px;font-weight:700}.field input,.field select{width:100%;height:45px;border:1px solid var(--border);border-radius:11px;padding:0 14px;outline:none;background:white;color:var(--tz-title-color);transition:var(--cube-2)}.field input:focus,.field select:focus{border-color:var(--tz-prime-c);box-shadow:0 0 0 4px #683bf21a}.field input::placeholder{color:#a5a4ad}.error{font-size:11px;color:#c62828;margin-top:5px}.error:empty{display:none}.hint{font-size:10px;line-height:1.55;color:#8a8793;margin-top:6px}.hint.valid{color:#18864b}
+.btn{width:100%;min-height:48px;border:0;border-radius:11px;background:var(--tz-prime-c);color:white;font-weight:700;cursor:pointer;box-shadow:0 10px 24px #683bf22b;transition:var(--cube-2)}.btn:hover{background:#5528df;transform:translateY(-2px);box-shadow:0 13px 28px #683bf23b}
+.message{display:none;padding:11px 13px;border-radius:10px;margin-top:12px;font-size:12px;line-height:1.5}.message.show{display:block}.message.error{color:#a61b1b;background:#fff0f0;border:1px solid #ffd6d6}.message.success{color:#146b3a;background:#eaf9f0;border:1px solid #c8efd8}.bottom{text-align:center;font-size:12px;padding-top:14px}.home{color:var(--tz-body-color);font-size:13px;font-weight:600}
+.visual{position:relative;overflow:hidden;padding:clamp(28px,5vw,70px);display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:radial-gradient(circle at 85% 18%,#9d85ff 0,transparent 28%),radial-gradient(circle at 10% 90%,#8c72ff 0,transparent 30%),linear-gradient(145deg,#683bf2 0%,#4920cb 55%,#2e148c 100%)}
+.visual:before,.visual:after{content:"";position:absolute;border:1px solid #ffffff28;border-radius:50%;pointer-events:none}.visual:before{width:520px;height:520px;right:-180px;top:12%}.visual:after{width:360px;height:360px;right:-90px;top:23%}
+.visual-top,.visual-copy,.visual-footer{position:relative;z-index:1}.tag{display:inline-flex;align-items:center;border:1px solid #ffffff50;background:#ffffff14;border-radius:100px;padding:9px 13px;font-size:11px}.visual-copy{max-width:520px;margin:40px 0}.visual-copy h2{color:#fff;font-size:clamp(34px,4vw,58px);letter-spacing:-2.5px;line-height:1.08;margin-bottom:18px}.visual-copy p{color:#e6deff;max-width:410px;font-size:14px;line-height:1.9}.features{display:grid;gap:13px;margin-top:30px}.feature{display:flex;gap:11px;align-items:center;font-size:12px;color:#f4efff}.feature-icon{width:27px;height:27px;border-radius:9px;background:#ffffff1e;display:grid;place-items:center}.visual-footer{color:#e0d7ff;font-size:11px}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.visual{display:none}.panel{min-height:100vh;padding:24px clamp(20px,6vw,54px)}.content{margin:30px auto}}
+.logo-img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="panel">
+<header class="brand">
+    <img src="assets/img/logo/logo.webp" alt="Stackly Logo" class="logo-img">
+</header>
+<div class="content">
+<div class="eyebrow">Get started</div>
+<h1>Create your account</h1>
+<p class="intro">Fill in the details below to continue.</p>
+<form id="signupForm" novalidate>
+<div class="field"><label for="fullName">Full name</label><input id="fullName" type="text" placeholder="Enter your full name" autocomplete="name" required><div class="error" id="nameError"></div></div>
+<div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" autocomplete="email" required><div class="error" id="emailError"></div></div>
+<div class="field"><label for="role">Account role</label><select id="role" required><option value="">Select your role</option><option value="admin">Admin</option><option value="user">User</option></select><div class="error" id="roleError"></div></div>
+<div class="field"><label for="password">Create password</label><input id="password" type="password" placeholder="Create a strong password" autocomplete="new-password" required><div class="hint" id="passwordHint">Use 8+ characters with uppercase, lowercase, a number, and a special character.</div><div class="error" id="passwordError"></div></div>
+<div class="field"><label for="confirmPassword">Confirm password</label><input id="confirmPassword" type="password" placeholder="Re-enter your password" autocomplete="new-password" required><div class="error" id="confirmPasswordError"></div></div>
+<label class="hint" style="display:flex;gap:8px;align-items:flex-start;margin:0 0 14px"><input id="showPasswords" type="checkbox" style="accent-color:#683BF2;margin-top:2px"> Show passwords</label>
+<button class="btn" type="submit">Create Account <span aria-hidden="true">→</span></button>
+<div class="message" id="formMessage" role="status" aria-live="polite"></div>
+</form>
+<div class="bottom">Already have an account? <a href="signin.html"><strong>Sign in</strong></a></div>
+</div>
+<footer class="bottom"><a class="home" href="index.html">← Back to Home</a></footer>
+</section>
+<aside class="visual">
+<div class="visual-top"><span class="tag">✦ &nbsp; START SOMETHING GREAT</span></div>
+<div class="visual-copy"><h2>Your next chapter<br>starts here.</h2><p>Create your Stackly demo profile and continue to the sign-in page.</p>
+<div class="features"><div class="feature"><span class="feature-icon">✓</span>Simple form validation</div><div class="feature"><span class="feature-icon">✓</span>Choose a demo role</div><div class="feature"><span class="feature-icon">✓</span>No registration data is saved</div></div></div>
+<div class="visual-footer">© 2026 Stackly. Built for better work.</div>
+</aside>
+</main>
+<script>
+const form=document.getElementById("signupForm"),message=document.getElementById("formMessage"),password=document.getElementById("password"),hint=document.getElementById("passwordHint");
+function validEmail(value){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)}
+function strongPassword(value){return value.length>=8&&/[A-Z]/.test(value)&&/[a-z]/.test(value)&&/\d/.test(value)&&/[^A-Za-z0-9]/.test(value)}
+function clearErrors(){document.querySelectorAll(".error").forEach(el=>el.textContent="");message.textContent="";message.className="message"}
+function showMessage(text,type){message.textContent=text;message.className="message show "+type}
+password.addEventListener("input",function(){const good=strongPassword(password.value);hint.textContent=good?"Strong password ✓":"Use 8+ characters with uppercase, lowercase, a number, and a special character.";hint.classList.toggle("valid",good)});
+document.getElementById("showPasswords").addEventListener("change",function(){const type=this.checked?"text":"password";password.type=type;document.getElementById("confirmPassword").type=type});
+form.addEventListener("submit",function(e){
+ e.preventDefault();clearErrors();
+ const name=document.getElementById("fullName").value.trim(),email=document.getElementById("email").value.trim(),role=document.getElementById("role").value,pass=password.value,confirm=document.getElementById("confirmPassword").value;let valid=true;
+ if(name.length<2){document.getElementById("nameError").textContent="Please enter your full name.";valid=false}
+ if(!validEmail(email)){document.getElementById("emailError").textContent="Enter a valid email address.";valid=false}
+ if(!role){document.getElementById("roleError").textContent="Please select Admin or User.";valid=false}
+ if(!strongPassword(pass)){document.getElementById("passwordError").textContent="Use 8+ characters, uppercase, lowercase, a number, and a special character.";valid=false}
+ if(pass!==confirm){document.getElementById("confirmPasswordError").textContent="Passwords do not match.";valid=false}
+ if(!valid)return;
+ // Intentionally do not store registration fields anywhere.
+ showMessage("Demo sign-up successful! No registration data was saved. Redirecting to Sign In…","success");
+ form.querySelector('button[type="submit"]').disabled=true;
+ setTimeout(()=>window.location.href="signin.html",1300);
+});
+</script>
+</body>
+</html>
